@@ -12,14 +12,13 @@ Parlor.prototype.addPizza = function(pizza) {
 
 
 function Pizza() {
-  this.sizes = {};
+  this.size;
   this.toppings = {};
   this.currentId = 0;
 }
 
-Pizza.prototype.addSize = function(size) {
-  this.currentId++;
-  this.sizes[this.currentId] = size;
+Pizza.prototype.changeSize = function(size) {
+  this.size = size;
 }
 
 Pizza.prototype.addTopping = function(topping) {
@@ -27,8 +26,13 @@ Pizza.prototype.addTopping = function(topping) {
   this.toppings[this.currentId] = topping;
 }
 
+Pizza.prototype.findSize = function(id) {
+
+}
 Pizza.prototype.determineTotalCost = function() {
-  
+  totalCost = 0;
+  totalCost += this.size.cost;
+  return totalCost;
 }
 
 function Size(name, diameter, cost) {
@@ -43,9 +47,9 @@ function Topping(name, cost) {
 }
 
 const parlor = new Parlor;
-let newpizza = new Pizza;
-parlor.addPizza(newpizza);
+let newPizza = new Pizza;
+parlor.addPizza(newPizza);
 let cheese = new Topping("cheese", 1);
-let small = new Size("small", 6, 10);
-newpizza.addTopping(cheese);
-newpizza.addSize(small);
+let small = new Size("small", 8, 8);
+newPizza.addTopping(cheese);
+newPizza.changeSize(small);
