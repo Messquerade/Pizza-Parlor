@@ -84,20 +84,24 @@ $(document).ready(function(){
     const olives = new Topping("olives", 1);
     const peppers = new Topping("peppers", 1);
     let toppingsArray = [cheese, pepperoni, sausage, olives, peppers];
+    // create an array of checked toppings
     let inputToppingsArray = [];
     $("input:checkbox[name=topping]:checked").each(function(){
       inputToppingsArray.push($(this).val());
     });
+    // loop through toppings options to match those checked and add those to pizza
     
-    for (let i = 0; i < inputToppingsArray.length; i++) {
-      let toppingName = inputToppingsArray[i];
-      for (let n = 0; n < toppingsArray.length; n++) {
-        if (toppingName === toppingsArray[n].name) {
-          newPizza.addTopping(toppingsArray[n]);
-        };
-      };
+    // for (let i = 0; i < inputToppingsArray.length; i++) {
+    //   let toppingName = inputToppingsArray[i];
+    //   for (let n = 0; n < toppingsArray.length; n++) {
+    //     if (toppingName === toppingsArray[n].name) {
+    //       newPizza.addTopping(toppingsArray[n]);
+    //     };
+    //   };
+      // ????? Created multiples of new pizza on accident ?????
+      // const totalCost = newPizza.determineTotalCost();
+      // console.log(totalCost)
       console.log(newPizza);
-      console.log(newPizza.toppings);
     };
 
 
