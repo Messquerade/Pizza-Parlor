@@ -33,6 +33,7 @@ Pizza.prototype.findTopping = function(id) {
   return false;
 };
 
+
 Pizza.prototype.determineTotalCost = function() {
   let totalCost = 0;
   totalCost += this.size.cost;
@@ -77,17 +78,28 @@ $(document).ready(function(){
     } else if (sizeInput === "large") {
       newPizza.changeSize(large)
     }
-    console.log(newPizza.size);
+    const cheese = new Topping("cheese", 1);
+    const pepperoni = new Topping("pepperoni", 2);
+    const sausage = new Topping("sausage", 2)
+    const olives = new Topping("olives", 1);
+    const peppers = new Topping("peppers", 1);
+    let toppingsArray = [cheese, pepperoni, sausage, olives, peppers];
+    let inputToppingsArray = [];
+    $("input:checkbox[name=topping]:checked").each(function(){
+      inputToppingsArray.push($(this).val());
+    });
+    
+    for (let i = 0; i < inputToppingsArray.length; i++) {
+      let toppingName = inputToppingsArray[i];
+      for (let n = 0; n < toppingsArray.length; n++) {
+        if (toppingName === toppingsArray[n].name) {
+          newPizza.addTopping(toppingsArray[n]);
+        };
+      };
+      console.log(newPizza);
+      console.log(newPizza.toppings);
+    };
+
 
   });
 });
-
-// const parlor = new Parlor;
-// let newPizza = new Pizza;
-// parlor.addPizza(newPizza);
-// let cheese = new Topping("cheese", 1);
-// let small = new Size("small", 8, 8);
-// newPizza.addTopping(cheese);
-// newPizza.changeSize(small);
-// let pepperoni = new Topping("pepperoni", 1);
-// newPizza.addTopping(pepperoni);
