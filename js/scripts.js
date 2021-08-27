@@ -7,7 +7,7 @@ function Parlor() {
 Parlor.prototype.addPizza = function(pizza) {
   this.currentId++;
   this.pizzas[this.currentId] = pizza;
-}
+};
 
 
 
@@ -19,21 +19,30 @@ function Pizza() {
 
 Pizza.prototype.changeSize = function(size) {
   this.size = size;
-}
+};
 
 Pizza.prototype.addTopping = function(topping) {
   this.currentId++;
   this.toppings[this.currentId] = topping;
-}
+};
 
-Pizza.prototype.findSize = function(id) {
+Pizza.prototype.findTopping = function(id) {
+  if (this.toppings[id] != undefined) {
+    return this.toppings[id];
+  }
+  return false;
+};
 
-}
 Pizza.prototype.determineTotalCost = function() {
-  totalCost = 0;
+  let totalCost = 0;
   totalCost += this.size.cost;
+  const currentPizza = this
+  Object.keys(currentPizza.toppings).forEach(function(key) {
+    const topping = currentPizza.findTopping(key);
+    totalCost += topping.cost;
+  })
   return totalCost;
-}
+};
 
 function Size(name, diameter, cost) {
   this.name = name;
@@ -53,3 +62,5 @@ let cheese = new Topping("cheese", 1);
 let small = new Size("small", 8, 8);
 newPizza.addTopping(cheese);
 newPizza.changeSize(small);
+let pepperoni = new Topping("pepperoni", 1);
+newPizza.addTopping(pepperoni);
