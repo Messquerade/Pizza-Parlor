@@ -56,10 +56,19 @@ function Topping(name, cost) {
 }
 
 // UI Logic
+let parlor = new Parlor;
+
+function displaySizeOptions(selectedPizza) {
+  const sizeOptions = $("#size-options");
+  let htmlForSizeOptions = "";
+
+}
+
+
 $(document).ready(function(){
   $("#add-pizza-form").submit(function(event) {
     event.preventDefault();
-    
+
   });
 });
 
