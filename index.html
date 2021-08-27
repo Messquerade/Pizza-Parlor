@@ -11,23 +11,30 @@
   <div class="container">
     <h1>Top Slice</h1>
     <h3>Welcome to Top Slice! The best pizza in town!</h3>
-    <p>Please fill out the following form to order your pizza:</p>
+    <h4>Please fill out the following form to order your pizza:</h4>
     <form id="add-pizza-form">
-      <select class="form-control" id="size-options">
-        <option value="small">small (diameter = 10 inches, $8.00)</option>
-        <option value="medium">medium (diameter = 12 inches, $10.00)</option>
-        <option value="large">large (diameter = 14 inches, $13.00</option>
-      </select>
-      <input type="checkbox" id="cheese" name="cheese" checked>
-      <label for="cheese">Cheese</label>
-      <input type="checkbox" id="pepperoni" name="pepperoni" checked>
-      <label for="pepperoni">Pepperoni</label>
-      <input type="checkbox" id="cheese" name="cheese" checked>
-      <label for="cheese">Cheese</label>
-      <input type="checkbox" id="cheese" name="cheese" checked>
-      <label for="cheese">Cheese</label>
-      <input type="checkbox" id="cheese" name="cheese" checked>
-      <label for="cheese">Cheese</label>
+      <div class="form-group">
+        <p>Pick a size:</p>
+        <select class="form-control" id="size-options">
+          <option value="small">small (diameter = 10 inches, $8.00)</option>
+          <option value="medium">medium (diameter = 12 inches, $10.00)</option>
+          <option value="large">large (diameter = 14 inches, $13.00</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <p>Pick any amount of toppings:</p>
+        <input type="checkbox" id="cheese" name="cheese" value="cheese" checked>
+        <label for="cheese">Cheese ($1.00)</label>
+        <input type="checkbox" id="pepperoni" name="pepperoni" value="pepperoni">
+        <label for="pepperoni">Pepperoni ($2.00)</label>
+        <input type="checkbox" id="sausage" name="sausage" value="sausage">
+        <label for="sausage">Sausage ($2.00)</label>
+        <input type="checkbox" id="olives" name="olives" value="olives">
+        <label for="olives">Olives ($1.00)</label>
+        <input type="checkbox" id="peppers" name="peppers" value="peppers">
+        <label for="peppers">Peppers ($1.00)</label>
+      </div>
+      <button type="submit" class="btn-success">submit</button>
     </form>
   </div>
 </body>
