@@ -55,12 +55,20 @@ function Topping(name, cost) {
   this.cost = cost;
 }
 
-const parlor = new Parlor;
-let newPizza = new Pizza;
-parlor.addPizza(newPizza);
-let cheese = new Topping("cheese", 1);
-let small = new Size("small", 8, 8);
-newPizza.addTopping(cheese);
-newPizza.changeSize(small);
-let pepperoni = new Topping("pepperoni", 1);
-newPizza.addTopping(pepperoni);
+// UI Logic
+$(document).ready(function(){
+  $("#add-pizza-form").submit(function(event) {
+    event.preventDefault();
+    
+  });
+});
+
+// const parlor = new Parlor;
+// let newPizza = new Pizza;
+// parlor.addPizza(newPizza);
+// let cheese = new Topping("cheese", 1);
+// let small = new Size("small", 8, 8);
+// newPizza.addTopping(cheese);
+// newPizza.changeSize(small);
+// let pepperoni = new Topping("pepperoni", 1);
+// newPizza.addTopping(pepperoni);
