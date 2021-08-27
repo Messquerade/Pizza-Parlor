@@ -9,6 +9,8 @@ Parlor.prototype.addPizza = function(pizza) {
   this.pizzas[this.currentId] = pizza;
 }
 
+
+
 function Pizza() {
   this.sizes = {};
   this.toppings = {};
@@ -25,6 +27,9 @@ Pizza.prototype.addTopping = function(topping) {
   this.toppings[this.currentId] = topping;
 }
 
+Pizza.prototype.determineTotalCost = function() {
+  
+}
 
 function Size(name, diameter, cost) {
   this.name = name;

@@ -40,5 +40,38 @@ _Anna Clarke: annac.klingberg@gmail.com_
 ## Specifications
 
 ### Describe Pizza.prototype.determineTotalCost()
+Total the cost of size and toppings for a pizza
 
-Test 1: "It will 
+
+Test 1: "It will check the cost of the size of the pizza and add that to totalCost, return totalCost"  
+Code: const parlor = new Parlor;
+let newPizza = new Pizza;
+parlor.addPizza(newPizza);
+let small = new Size("small", 8, 8);
+newPizza.addSize(small);
+newPizza.determineTotalCost();  
+Expected Output: 8
+
+Test 2: "It will check the cost of one topping of the pizza and add that to totalCost, return totalCost"
+Code: const parlor = new Parlor;
+let newPizza = new Pizza;
+parlor.addPizza(newPizza);
+let small = new Size("small", 8, 8);
+let cheese = new Topping("cheese", 1);
+newPizza.addSize(small);
+newPizza.addTopping(cheese);
+newPizza.determineTotalCost();  
+Expected Output: 9
+
+Test 3: "It will check the cost of multiple toppings of the pizza and add them all to totalCost, return totalCost"
+Code: const parlor = new Parlor;
+let newPizza = new Pizza;
+parlor.addPizza(newPizza);
+let small = new Size("small", 8, 8);
+let cheese = new Topping("cheese", 1);
+let pepperoni = newTopping("pepperoni", 1);
+newPizza.addSize(small);
+newPizza.addTopping(cheese);
+newPizza.addTopping(pepperoni);
+newPizza.determineTotalCost();  
+Expected Output: 10
