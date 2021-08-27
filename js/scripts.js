@@ -90,20 +90,22 @@ $(document).ready(function(){
       inputToppingsArray.push($(this).val());
     });
     // loop through toppings options to match those checked and add those to pizza
-    
-    // for (let i = 0; i < inputToppingsArray.length; i++) {
-    //   let toppingName = inputToppingsArray[i];
-    //   for (let n = 0; n < toppingsArray.length; n++) {
-    //     if (toppingName === toppingsArray[n].name) {
-    //       newPizza.addTopping(toppingsArray[n]);
-    //     };
-    //   };
+    // let checkedToppings = toppingsArray.name.filter(function(n) {
+    //   return inputToppingsArray.indexOf(n) !== -1;
+    // });
+    // console.log(checkedToppings)
+    let checkedToppings = []
+    for (j in inputToppingsArray) {
+      for (i in toppingsArray) {
+        if (inputToppingsArray[j].name === toppingsArray[i]) {
+          checkedToppings.push(inputToppingsArray[i]);
+        };
+      };
+    };
+      console.log(checkedToppings);
       // ????? Created multiples of new pizza on accident ?????
       // const totalCost = newPizza.determineTotalCost();
       // console.log(totalCost)
       console.log(newPizza);
-    };
-
-
-  });
+    });
 });
