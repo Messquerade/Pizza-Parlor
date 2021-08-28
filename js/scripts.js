@@ -78,34 +78,28 @@ $(document).ready(function(){
     } else if (sizeInput === "large") {
       newPizza.changeSize(large)
     }
-    const cheese = new Topping("cheese", 1);
-    const pepperoni = new Topping("pepperoni", 2);
-    const sausage = new Topping("sausage", 2)
-    const olives = new Topping("olives", 1);
-    const peppers = new Topping("peppers", 1);
-    let toppingsArray = [cheese, pepperoni, sausage, olives, peppers];
-    // create an array of checked toppings
-    let inputToppingsArray = [];
-    $("input:checkbox[name=topping]:checked").each(function(){
-      inputToppingsArray.push($(this).val());
+    let inputToppingsArray1 = [];
+    $("input:checkbox[name=topping-1]:checked").each(function(){
+      inputToppingsArray1.push($(this).val());
+      });
+    inputToppingsArray1.forEach(function(name) {
+      const newTopping = new Topping(name, 1);
+      newPizza.addTopping(newTopping);
     });
-    // loop through toppings options to match those checked and add those to pizza
-    // let checkedToppings = toppingsArray.name.filter(function(n) {
-    //   return inputToppingsArray.indexOf(n) !== -1;
-    // });
-    // console.log(checkedToppings)
-    let checkedToppings = []
-    for (j in inputToppingsArray) {
-      for (i in toppingsArray) {
-        if (inputToppingsArray[j].name === toppingsArray[i]) {
-          checkedToppings.push(inputToppingsArray[i]);
-        };
-      };
-    };
-      console.log(checkedToppings);
-      // ????? Created multiples of new pizza on accident ?????
-      // const totalCost = newPizza.determineTotalCost();
-      // console.log(totalCost)
-      console.log(newPizza);
+
+    let inputToppingsArray2 = [];
+    $("input:checkbox[name=topping-2]:checked").each(function(){
+      inputToppingsArray2.push($(this).val());
+      });
+    inputToppingsArray2.forEach(function(name) {
+      const newTopping = new Topping(name, 2);
+      newPizza.addTopping(newTopping);
+    });
+    
+
+    console.log(newPizza)
+
+
+    
     });
 });
