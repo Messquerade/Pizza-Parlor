@@ -9,8 +9,6 @@ Parlor.prototype.addPizza = function(pizza) {
   this.pizzas[this.currentId] = pizza;
 };
 
-
-
 function Pizza() {
   this.size;
   this.toppings = {};
@@ -32,7 +30,6 @@ Pizza.prototype.findTopping = function(id) {
   }
   return false;
 };
-
 
 Pizza.prototype.determineTotalCost = function() {
   let totalCost = 0;
@@ -59,8 +56,12 @@ function Topping(name, cost) {
 // UI Logic
 let parlor = new Parlor;
 
+function displayPizza(pizza) {
+  let pizzalist = $("ol#current-pizza")
+  let htmlPizzaString = ""
 
 
+}
 
 $(document).ready(function(){
   $("#add-pizza-form").submit(function(event) {
@@ -78,6 +79,7 @@ $(document).ready(function(){
     } else if (sizeInput === "large") {
       newPizza.changeSize(large)
     }
+
     let inputToppingsArray1 = [];
     $("input:checkbox[name=topping-1]:checked").each(function(){
       inputToppingsArray1.push($(this).val());
@@ -96,10 +98,7 @@ $(document).ready(function(){
       newPizza.addTopping(newTopping);
     });
     
-
-    console.log(newPizza)
-
-
-    
+    const totalCost = newPizza.determineTotalCost();
+    $("#total-cost").text(totalCost);
     });
 });
