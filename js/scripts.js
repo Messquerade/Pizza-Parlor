@@ -57,10 +57,17 @@ function Topping(name, cost) {
 let parlor = new Parlor;
 
 function displayPizza(pizza) {
-  let pizzalist = $("ol#current-pizza")
-  let htmlPizzaString = ""
-
-
+  let pizzalist = $("ol#current-pizza");
+  let htmlPizzaString = "<li> A " + pizza.size.name + " pizza";
+  if (pizza.toppings != {}) {
+    htmlPizzaString += " with";
+    Object.keys(pizza.toppings).forEach(function(key) {
+      const topping = pizza.findTopping(key);
+      htmlPizzaString += " " + topping.name + " ";
+    })
+  }
+  htmlPizzaString += "</li>";
+  pizzalist.html(htmlPizzaString);
 }
 
 $(document).ready(function(){
@@ -100,5 +107,6 @@ $(document).ready(function(){
     
     const totalCost = newPizza.determineTotalCost();
     $("#total-cost").text(totalCost);
+    displayPizza(newPizza);
     });
 });
