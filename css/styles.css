@@ -1,0 +1,19 @@
+body {
+  background-color: black;
+  color: antiquewhite;
+  background-image: url("pizza-background.jpg");
+  background-size: cover;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#header {
+  margin: 50px;
+}
+
+#size-options {
+  width: 500px;
+}
+
+
+
