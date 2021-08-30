@@ -59,12 +59,14 @@ let parlor = new Parlor;
 function displayPizza(pizza) {
   let pizzalist = $("ol#current-pizza");
   let htmlPizzaString = "<li> A " + pizza.size.name + " pizza";
-  if (pizza.toppings != {}) {
-    htmlPizzaString += " with";
+  let numberOfToppings = Object.keys(pizza.toppings).length;
+  if (numberOfToppings > 0) {
+    htmlPizzaString += " with: <ul>";
     Object.keys(pizza.toppings).forEach(function(key) {
       const topping = pizza.findTopping(key);
-      htmlPizzaString += " " + topping.name + " ";
+      htmlPizzaString += "<li>" + topping.name + "</li>"
     })
+    htmlPizzaString += "</ul>"
   }
   htmlPizzaString += "</li>";
   pizzalist.html(htmlPizzaString);
